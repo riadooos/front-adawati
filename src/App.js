@@ -1,24 +1,81 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Layout } from "./components/common/Layout";
+import { Home } from "./pages/Home";
+import { BlogSinglePage } from "./components/common/BlogSinglePage";
+import { About } from "./pages/About";
+import { Courses } from "./pages/Courses";
+import { Blog } from "./pages/Blog";
+import { Instructor } from "./pages/Instructor";
+import HomeEcole from "./pagesEcole/HomeEcole";
+import { CartProvider } from "react-use-cart";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <CartProvider>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Layout>
+                  <Home />
+                </Layout>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <Layout>
+                  <About />
+                </Layout>
+              }
+            />
+            <Route
+              path="/courses"
+              element={
+                <Layout>
+                  <Courses />
+                </Layout>
+              }
+            />
+            <Route
+              path="/instructor"
+              element={
+                <Layout>
+                  <Instructor />
+                </Layout>
+              }
+            />
+            <Route
+              path="/blog"
+              element={
+                <Layout>
+                  <Blog />
+                </Layout>
+              }
+            />
+            <Route
+              path="/single-blog"
+              element={
+                <Layout>
+                  <BlogSinglePage />
+                </Layout>
+              }
+            />
+            <Route
+              path="/single-blog"
+              element={
+                <Layout>
+                  <BlogSinglePage />
+                </Layout>
+              }
+            />
+            <Route path="/ecole" element={<HomeEcole />} />
+          </Routes>
+        </CartProvider>
+      </BrowserRouter>
+    </>
   );
 }
 

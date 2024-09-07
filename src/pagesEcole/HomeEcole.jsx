@@ -34,13 +34,13 @@ const HomeEcole = () => {
         <div className="min-h-[150px] bg-[#8997F1]  lg:col-span-4 rounded-lg">
           {" "}
           <div className="flex justify-between text-2xl text-white m-4">
-            <h2>Enseignement Primaire</h2>
+            <h2>Enseignement Moyen</h2>
             <h2> التعليم المتوسط</h2>
           </div>
         </div>
         <div className="min-h-[150px] bg-[#6CBC6B]  lg:col-span-4 rounded-lg">
           <div className="flex justify-between text-xl text-white m-4">
-            <h2>Enseignement Primaire</h2>
+            <h2>Enseignement Secondaire</h2>
             <h2> التعليم الثانوي</h2>
           </div>
         </div>
